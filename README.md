@@ -1,4 +1,4 @@
-# Gene Sequence Analysis Tool
+# Gene Sequence Analysis Tool usgRNA-Finder (Universal sgRNA Finder)
 
 This is a Python script for analyzing gene sequences, which can identify specific sequence patterns and generate analysis reports.
 
