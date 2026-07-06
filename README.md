@@ -8,6 +8,7 @@ This is a Python script for analyzing gene sequences, which can identify specifi
 - Required Python packages:
   - pandas
   - openpyxl
+  - biopython
 
 ## Installation Steps
 
@@ -21,7 +22,7 @@ This is a Python script for analyzing gene sequences, which can identify specifi
 
 2. Install dependencies
    ```bash
-   pip install pandas openpyxl
+   pip install pandas openpyxl biopython
    ```
 
 ### Linux (Ubuntu/Debian)
@@ -34,7 +35,7 @@ This is a Python script for analyzing gene sequences, which can identify specifi
 
 2. Install dependencies
    ```bash
-   pip3 install pandas openpyxl
+   pip3 install pandas openpyxl biopython
    ```
 
 ### macOS
@@ -48,13 +49,13 @@ This is a Python script for analyzing gene sequences, which can identify specifi
 
 2. Install dependencies
    ```bash
-   pip3 install pandas openpyxl
+   pip3 install pandas openpyxl biopython
    ```
 
 ## Usage
 
 1. Prepare input file
-   - Create an Excel file named `input.xlsx`
+   - Create an Excel file named `input.xlsx` or prepare a standard fasta file 
    - The file should contain two columns: gene name and gene sequence
    - First row should be headers, data starts from second row
 
@@ -73,11 +74,24 @@ This is a Python script for analyzing gene sequences, which can identify specifi
 
 - Ensure `input.xlsx` file is in the same directory as the script
 - Input file sequences should use standard DNA base symbols (A, T, C, G)
-- "-" can be used to represent missing or unknown bases
+- "-" or "N" can be used to represent missing and unknown bases
 - Output file will overwrite existing files with the same name
+- New added the `--pam` parameter to specify the sites to query
+
+## Example
+
+<p align="center"><img src="example/Screenshots_input1.png" alt="input file example"></p>
+<p align="center"><img src="example/Screenshots_input2.png" alt="input file example"></p>
+<p align="center"><img src="example/Screenshots_output1.png" alt="input file example"></p>
+<p align="center"><img src="example/Screenshots_output2.png" alt="input file example"></p>
+
 
 ## Troubleshooting
 
 1. If you encounter "ModuleNotFoundError", ensure all dependencies are properly installed
 2. If you encounter file access permission issues, ensure you have sufficient permissions to read/write the files
 3. If you encounter encoding issues, ensure the input file uses UTF-8 encoding 
+
+## Other
+
+- The users should notice that the current version cannot automatically determine whether a candidate target spans two exon.
