@@ -80,10 +80,10 @@ This is a Python script for analyzing gene sequences, which can identify specifi
 
 ## Example
 
-<p align="center"><img src="example/Screenshots_input1.png" alt="input file example"></p>
-<p align="center"><img src="example/Screenshots_input2.png" alt="input file example"></p>
-<p align="center"><img src="example/Screenshots_output1.png" alt="input file example"></p>
-<p align="center"><img src="example/Screenshots_output2.png" alt="input file example"></p>
+<p align="center"><img src="example/Screenshots_input1.png" alt="input xlsx file example"></p>
+<p align="center"><img src="example/Screenshots_input2.png" alt="input fasta file example"></p>
+<p align="center"><img src="example/Screenshots_output1.png" alt="output gene scissors example"></p>
+<p align="center"><img src="example/Screenshots_output2.png" alt="output gene matches example"></p>
 
 
 ## Troubleshooting
