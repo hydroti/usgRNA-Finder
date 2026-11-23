@@ -1,6 +1,8 @@
 # Gene Sequence Analysis Tool usgRNA-Finder (Universal sgRNA Finder)
 
-This is a Python script for analyzing gene sequences, which can identify specific sequence patterns and generate analysis reports.
+This is a Python script for analyzing gene sequences, which can identify specific sequence patterns and generate analysis reports. usgRNA-Finder is a sequence-conservation screening tool that identifies candidate universal sgRNAs (usgRNAs) by scanning input homologous sequences for conserved target sites with no more than two mismatches under specified PAM constraints. The algorithm operates on a pre-aligned sequence set and, under stringent PAM constraints, screens all 23-bp sliding windows and retains the sgRNAs whose corresponding target sites have two or fewer mismatches relative to each input spacer sequence as candidate usgRNAs.
+
+To rank candidate usgRNAs for downstream experimental validation, usgRNA-Finder employs the Cutting Frequency Determination (CFD) score as a mismatch penalty factor to account for the severity of sequence variations. For each input sequence, a specific weight is assigned based on the mismatch type, position, and count according to CFD. The final Score for each usgRNA is calculated as the percentage average of these sequence-specific weights across all input sequences. Importantly, while CFD weights are applied here to penalize mismatches for ranking purposes, the resulting Score does not constitute a validated prediction of sgRNA editing activity across plant species. 
 
 ## Requirements
 
@@ -72,11 +74,10 @@ This is a Python script for analyzing gene sequences, which can identify specifi
 
 ## Notes
 
-- Ensure `input.xlsx` file is in the same directory as the script
-- Input file sequences should use standard DNA base symbols (A, T, C, G)
-- "-" or "N" can be used to represent missing and unknown bases
-- Output file will overwrite existing files with the same name
-- New added the `--pam` parameter to specify the sites to query
+- Ensure `input.xlsx` file is in the same directory as the script.
+- Input file sequences should use standard DNA base symbols (A, T, C, G), "-" "N" or "ambiguous bases like N, R, Y" can be used to represent missing and unknown bases, the program will skip any 23-bp window containing non-canonical nucleotides.
+- Output file will overwrite existing files with the same name.
+- The `--pam` parameter to specify the sites to query.
 
 ## Example
 
